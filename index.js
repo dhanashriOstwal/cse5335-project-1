@@ -12,6 +12,7 @@ app.use('/bower_components', express.static(__dirname + '/bower_components'));
 app.set('views', __dirname + '/views');
 app.set('view engine', 'ejs');
 
+
 app.get('/', function(request, response) {
   response.render('pages/index');
   /* Handling the AngularJS get request*/
@@ -22,6 +23,7 @@ app.get('/', function(request, response) {
         /*adding a new field to send it to the angular Client */
     response.end(JSON.stringify(request.body));
     /*Sending the respone back to the angular Client */
+	res.sendFile(__dirname + '/Name.html');
 });
 /*
 app.get('/cool', function(request, response) {
