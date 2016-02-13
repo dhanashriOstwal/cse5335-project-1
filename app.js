@@ -8,10 +8,10 @@ var app = express();
 app.use(express.static(path.join(__dirname, 'public')));
 /*JS client side files has to be placed under a folder by name 'public' */
 app.use(express.bodyParser());
-  
+ /* 
 app.get('/', function(request, response) {
    response.render('pages/index')
-}); 
+}); */
 /*
 app.get('/cool', function(request, response) {
   response.send(cool());
