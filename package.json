@@ -18,6 +18,10 @@
     "type": "git",
     "url": "https://github.com/heroku/node-js-getting-started"
   },
+  
+  "scripts": {
+    "postinstall": "./node_modules/bower/bin/bower install"
+}
   "keywords": [
     "node",
     "heroku",
