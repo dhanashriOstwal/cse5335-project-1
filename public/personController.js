@@ -20,8 +20,8 @@ var app = angular.module('myApp', []);
 		console.log($scope.firstName + ' ' + $scope.lastName);
 		console.log($scope.date);
 		var posting = $http({
-			method:'POST',
-			url: '/post',
+			method:'GET',
+			url: '/get',
 			data: $scope.data,
 			firstName: $scope.firstName,
 			lastName: $scope.lastName,
