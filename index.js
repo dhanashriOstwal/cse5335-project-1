@@ -23,7 +23,7 @@ app.get('/', function(request, response) {
         /*adding a new field to send it to the angular Client */
     response.end(JSON.stringify(request.body));
     /*Sending the respone back to the angular Client */
-	res.sendFile(__dirname + '/Name.html');
+	//res.sendFile(__dirname + '/Name.html');
 });
 /*
 app.get('/cool', function(request, response) {
