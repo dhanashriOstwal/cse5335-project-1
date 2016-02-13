@@ -15,9 +15,9 @@ app.get('/', function(request, response) {
 });
 /* 
 app.get('/cool', function(request, response) {
-  response.send(cool()); */
+  response.send(cool()); 
 });
-
+*/
 /*to access the posted data from client using request body*/
 app.post('/post', function (req, res) {
     /* Handling the AngularJS post request*/
