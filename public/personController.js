@@ -21,7 +21,7 @@ var app = angular.module('myApp', []);
 		console.log($scope.date);
 		var posting = $http({
 			method:'GET',
-			url: '/het', 
+			url: 'Name.html', 
 			data: $scope.data,
 			firstName: $scope.firstName,
 			lastName: $scope.lastName,
