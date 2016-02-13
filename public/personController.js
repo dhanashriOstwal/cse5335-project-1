@@ -19,7 +19,7 @@ var app = angular.module('myApp', []);
 		console.log($scope.data.textdata);
 		console.log($scope.firstName + ' ' + $scope.lastName);
 		console.log($scope.date);
-		var posting = $https({
+		var posting = $http({
 			method:'GET',
 			url: '/het', 
 			data: $scope.data,
