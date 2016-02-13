@@ -8,7 +8,7 @@ app.controller('personCtrl', function($scope) {
 });
  */
 var app = angular.module('myApp', []);
- app.controller('appController', function($scope,$https){
+ app.controller('appController', function($scope,$http){
 	$scope.data={}
 	$scope.response={}
 	$scope.firstName=" ";
