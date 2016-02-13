@@ -11,8 +11,8 @@ var app = angular.module('myApp', []);
  app.controller('appController', function($scope,$http){
 	$scope.data={}
 	$scope.response={}
-	$scope.firstName=" ";
-	$scope.lastName=" ";
+	$scope.firstName="a ";
+	$scope.lastName=" b";
 	
 	$scope.send = function(){
 		console.log("inside click");
@@ -21,12 +21,13 @@ var app = angular.module('myApp', []);
 		console.log($scope.date);
 		var posting = $http({
 			method:'GET',
-			url: '/Name.html', 
-			data: $scope.data,
-			firstName: $scope.firstName,
+			url: '/Name.html',
+			params: {$scope.firstName},
+			data: $scope.data
+			/* firstName: $scope.firstName,
 			lastName: $scope.lastName,
 			date: $scope.date,
-			processData: false
+			processData: false */
 		})
 		posting.success(function (response) {
                     /*executed when server responds back*/
