@@ -1,4 +1,4 @@
-var cool = require('cool-ascii-faces');
+/* var cool = require('cool-ascii-faces'); */
 var express = require('express');
 var app = express();
 
@@ -13,9 +13,9 @@ app.set('view engine', 'ejs');
 app.get('/', function(request, response) {
   response.render('pages/index');
 });
-
+/* 
 app.get('/cool', function(request, response) {
-  response.send(cool());
+  response.send(cool()); */
 });
 
 /*to access the posted data from client using request body*/
