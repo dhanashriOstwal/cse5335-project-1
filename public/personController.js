@@ -8,7 +8,7 @@ app.controller('personCtrl', function($scope) {
 });
  */
 var app = angular.module('myApp', []);
- app.controller('appController', function($scope,$http){
+ app.controller('appController', function($scope,$https){
 	$scope.data={}
 	$scope.response={}
 	$scope.firstName=" ";
@@ -19,9 +19,9 @@ var app = angular.module('myApp', []);
 		console.log($scope.data.textdata);
 		console.log($scope.firstName + ' ' + $scope.lastName);
 		console.log($scope.date);
-		var posting = $http({
+		var posting = $https({
 			method:'GET',
-			/* url: '/', */
+			url: '/het', 
 			data: $scope.data,
 			firstName: $scope.firstName,
 			lastName: $scope.lastName,
