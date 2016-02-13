@@ -22,8 +22,8 @@ var app = angular.module('myApp', []);
 		console.log($scope.firstName + ' ' + $scope.lastName);
 		console.log($scope.date);
 		var posting = $http({
-			method:'POST',
-			url: '/post',
+			method:'GET',
+			url: '/get',
 			params: {firstname : $scope.firstName, lastName : $scope.lastName, date : $scope.date, txtData : $scope.textdata}
 			//data: $scope.data
 			/* firstName: $scope.firstName,
