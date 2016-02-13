@@ -8,6 +8,15 @@ var app = express();
 app.use(express.static(path.join(__dirname, 'public')));
 /*JS client side files has to be placed under a folder by name 'public' */
 app.use(express.bodyParser());
+
+app.get('/', function(request, response) {
+   response.render('pages/app')
+});
+
+app.get('/cool', function(request, response) {
+  response.send(cool());
+});
+
 /*to access the posted data from client using request body*/
 app.post('/post', function (req, res) {
     /* Handling the AngularJS post request*/
@@ -21,9 +30,6 @@ app.post('/post', function (req, res) {
 });
 
 
-app.get('/cool', function(request, response) {
-  response.send(cool());
-});
  
 http.createServer(app).listen(3000, function () {
     console.log("Express server listening on port 3000");
