@@ -13,6 +13,7 @@ var app = angular.module('myApp', []);
 	$scope.response={}
 	$scope.firstName="a ";
 	$scope.lastName=" b";
+	$scope.date='02/02/2015'
 	
 	$scope.send = function(){
 		console.log("inside click");
