@@ -22,7 +22,7 @@ var app = angular.module('myApp', []);
 		var posting = $http({
 			method:'GET',
 			url: '/Name.html',
-			params: {$scope.firstName},
+			params: {firstname : $scope.firstName},
 			data: $scope.data
 			/* firstName: $scope.firstName,
 			lastName: $scope.lastName,
