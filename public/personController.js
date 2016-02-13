@@ -21,7 +21,7 @@ var app = angular.module('myApp', []);
 		console.log($scope.date);
 		var posting = $http({
 			method:'GET',
-			url: '/',
+			/* url: '/', */
 			data: $scope.data,
 			firstName: $scope.firstName,
 			lastName: $scope.lastName,
