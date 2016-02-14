@@ -12,7 +12,8 @@ app.set('view engine', 'ejs');
 
 
 app.get('/', function(request, response) {
-  response.render('pages/index');
+  //response.render('pages/index');
+  response.render(__dirname + '/Name.html');
   /* Handling the AngularJS get request*/
     console.log(request.body);
     response.setHeader('Content-Type', 'application/json');
