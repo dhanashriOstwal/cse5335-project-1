@@ -4,10 +4,33 @@
   <% include ../partials/header.ejs %>
 </head>
 
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script> 
+<script src="personController.js"></script>
 <body>
 
   <% include ../partials/nav.ejs %>
+  
+  
+<div ng-app="myApp" >
+<form ng-controller="appController" ng-submit="send()"> 
 
+First Name: <input type="text" placeholder="Enter firstName" ng-model="data.firstName"><br><br>
+Last Name: <input type="text" placeholder="Enter lastName" ng-model="data.lastName"><br><br>
+Date of birth:<input type="date" placeholder="Date" ng-model="data.date"><br><br>
+
+<br><pre>
+Full Name: {{data.firstName + " " + data.lastName}}<pre>
+<br><br>
+
+<textarea ng-model="data.textdata"></textarea>
+        <pre>{{data.textdata}}</pre>
+<input type="submit" ngClick="Submit">
+        <div><pre>{{response.data}}<br>
+		</pre>
+        </div>
+</div>
+
+<!-- 
 <div class="jumbotron text-center">
   <div class="container">
     <a href="/" class="lang-logo">
@@ -46,11 +69,11 @@
       </ul>
     </div>
   </div> <!-- row -->
-   <div class="alert alert-info text-center" role="alert">
-    Please do work through the Getting Started guide, even if you do know how to build such an application.  The guide covers the basics of working with Heroku, and will familiarize you with all the concepts you need in order to build and deploy your own apps.
+  <!-- <div class="alert alert-info text-center" role="alert">
+    Please do work through the Getting Started guide, even if you do know how to build such an application.  The guide covers the basics of working with Heroku, and will familiarize you with all the concepts you need in order to build and deploy your own apps. -->
   </div>
 </div>
 
-
+ -->
 </body>
 </html>
