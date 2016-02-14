@@ -10,7 +10,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.bodyParser());
   
 app.get('/', function(request, response) {
-   response.render('public/Name.html')
+   response.render('pages/Name')
 }); 
 /*
 app.get('/cool', function(request, response) {
