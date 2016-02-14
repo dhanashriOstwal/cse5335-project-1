@@ -12,20 +12,17 @@
   
   
 	<div ng-app="myApp" >
-		<form ng-controller="appController" ng-submit="send()"> 
-
+		<div ng-controller="appController" ng-submit="send()"> 
 			First Name: <input type="text" placeholder="Enter firstName" ng-model="data.firstName"><br><br>
 			Last Name: <input type="text" placeholder="Enter lastName" ng-model="data.lastName"><br><br>
 			Date of birth:<input type="date" placeholder="Date" ng-model="data.date"><br><br>
-
-			<br><pre>
-			Full Name: {{data.firstName + " " + data.lastName}}</pre>
+			<br><pre>Full Name: {{data.firstName + " " + data.lastName}}</pre>
 			<br><br>
-
 			<textarea ng-model="data.textdata"></textarea>
-					<pre>{{data.textdata}}</pre>
+			<pre>{{data.textdata}}</pre>
 			<input type="submit" ngClick="Submit">
-					<div><pre>{{response.data}}<br></pre></div>
+			<div><pre>{{response.data}}<br></pre></div>
+		</div>
 	</div>
 
 <!-- 
