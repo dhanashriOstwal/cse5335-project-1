@@ -8,7 +8,7 @@ app.controller('personCtrl', function($scope) {
 });
  */
 var app = angular.module('myApp', []);
- app.controller('appController', function($scope,$http){
+app.controller('appController', function($scope,$http){
 	$scope.data={}
 	$scope.response={}
 	$scope.firstName="a ";
@@ -32,12 +32,10 @@ var app = angular.module('myApp', []);
 			processData: false */
 		})
 		posting.success(function (response) {
-                    /*executed when server responds back*/
-                    console.log(response);
-                    $scope.response.data = response;
-					//$scope.response.firstName = response;
-					console.log($scope.response.data);
-					//console.log($scope.response.firstName);
-                });
+            /*executed when server responds back*/
+            console.log(response);
+            $scope.response.data = response;
+			console.log($scope.response.data);
+        });
 	}
 });
