@@ -33,7 +33,7 @@ app.controller('appController', function($scope,$http){
 		})
 		posting.success(function (response) {
             /*executed when server responds back*/
-            console.log(response);
+            //console.log(response);
             $scope.response.data = response;
 			console.log($scope.response.data);
         });
