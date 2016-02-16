@@ -19,7 +19,7 @@ app.get('/cool', function(request, response) {
 
  /*to access the posted data from client using request body*/
 app.get('/', function (req, res) {
-	response.render('pages/index');
+	//response.render('pages/index');
     /* Handling the AngularJS post request*/
     console.log(req.body);
     res.setHeader('Content-Type', 'application/json');
