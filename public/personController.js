@@ -22,14 +22,14 @@ app.controller('appController', function($scope,$http){
 		console.log($scope.firstName + ' ' + $scope.lastName);
 		console.log($scope.date);
 		var posting = $http({
-			method:'POST',
-			url: '/post',
-			//params: {firstname : $scope.firstName, lastName : $scope.lastName, date : $scope.date, txtData : $scope.textdata}
-			data: $scope.data,
-			firstName: $scope.firstName,
-			lastName: $scope.lastName,
-			date: $scope.date,
-			processData: false 
+			method:'GET',
+			url: '/get',
+			params: {firstname : $scope.firstName, lastName : $scope.lastName, date : $scope.date, txtData : $scope.textdata}
+			//data: $scope.data,
+			//firstName: $scope.firstName,
+			//lastName: $scope.lastName,
+			//date: $scope.date,
+			//processData: false 
 		})
 		posting.success(function (response) {
             /*executed when server responds back*/
