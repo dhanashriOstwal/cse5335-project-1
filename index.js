@@ -20,7 +20,7 @@ app.get('/', function(request, response) {
     request.body.serverMessage = "NodeJS replying to angular"
         /*adding a new field to send it to the angular Client */
     response.send(JSON.stringify(request.body));
-	response.render('pages/index');
+	//response.render('pages/index');
     /*Sending the respone back to the angular Client */
 	//res.sendFile(__dirname + '/Name.html');
 });
