@@ -25,7 +25,7 @@ app.controller('appController', function($scope,$http){
 			method:'POST',
 			url: '/post',
 			//params: {firstname : $scope.firstName, lastName : $scope.lastName, date : $scope.date, txtData : $scope.textdata}
-			data: $scope.data
+			data: $scope.data,
 			firstName: $scope.firstName,
 			lastName: $scope.lastName,
 			date: $scope.date,
