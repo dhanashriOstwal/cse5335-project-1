@@ -11,8 +11,8 @@ app.set('views', __dirname + '/views');
 app.set('view engine', 'ejs');
 
 
-app.get('/get', function(request, response) {
-  response.render('pages/index');
+app.get('/', function(request, response) {
+  //response.render('pages/index');
   /* Handling the AngularJS get request*/
     console.log(request.body);
     response.setHeader('Content-Type', 'application/json');
@@ -20,6 +20,7 @@ app.get('/get', function(request, response) {
     request.body.serverMessage = "NodeJS replying to angular"
         /*adding a new field to send it to the angular Client */
     response.send(JSON.stringify(request.body));
+	response.render('pages/index');
     /*Sending the respone back to the angular Client */
 	//res.sendFile(__dirname + '/Name.html');
 });
