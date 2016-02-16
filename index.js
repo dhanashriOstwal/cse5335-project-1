@@ -11,7 +11,7 @@ app.set('views', __dirname + '/views');
 app.set('view engine', 'ejs');
 
 
-app.get('/', function(request, response) {
+app.post('/post', function(request, response) {
   response.render('pages/index');
   /* Handling the AngularJS get request*/
     console.log(request.body);
