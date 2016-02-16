@@ -24,12 +24,12 @@ app.controller('appController', function($scope,$http){
 		var posting = $http({
 			method:'GET',
 			url: '/get',
-			//params: {firstname : $scope.firstName, lastName : $scope.lastName, date : $scope.date, txtData : $scope.textdata}
-			data: $scope.data,
-			firstName: $scope.firstName,
-			lastName: $scope.lastName,
-			date: $scope.date,
-			processData: false 
+			params: {firstname : $scope.firstName, lastName : $scope.lastName, date : $scope.date, txtData : $scope.textdata}
+			//data: $scope.data,
+			//firstName: $scope.firstName,
+			//lastName: $scope.lastName,
+			//date: $scope.date,
+			//processData: false 
 		})
 		posting.success(function (response) {
             /*executed when server responds back*/
