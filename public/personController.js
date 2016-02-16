@@ -31,7 +31,7 @@ app.controller('appController', function($scope,$http){
 			//date: $scope.date,
 			//processData: false 
 		})
-		posting.success(function (response) {
+		posting.then(function (response) {
             /*executed when server responds back*/
             //console.log(response);
             $scope.response.data = response;
