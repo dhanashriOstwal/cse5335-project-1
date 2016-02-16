@@ -10,11 +10,11 @@ app.controller('personCtrl', function($scope) {
 var app = angular.module('myApp', []);
 app.controller('appController', function($scope,$http){
 	$scope.data={}
-	$scope.response={}
+	$scope.response={}/* 
 	$scope.firstName="a ";
 	$scope.lastName=" b";
 	$scope.date='02/02/2015';
-	$scope.textdata='xx';
+	$scope.textdata='xx'; */
 	
 	$scope.send = function(){
 		console.log("inside click");
