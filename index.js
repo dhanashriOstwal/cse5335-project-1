@@ -12,7 +12,7 @@ app.set('view engine', 'ejs');
 
 
 app.get('/get', function(request, response) {
-  //response.render('pages/index');
+  response.render('pages/index');
   /* Handling the AngularJS get request*/
     console.log(request.body);
     response.setHeader('Content-Type', 'application/json');
