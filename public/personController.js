@@ -22,8 +22,8 @@ app.controller('appController', function($scope,$http){
 		console.log($scope.firstName + ' ' + $scope.lastName);
 		console.log($scope.date);*/
 		/* var posting =  */$http({
-			method:"GET"
-			//url: " "
+			method:"GET",
+			url: "/get "
 			//params: {firstname : $scope.firstName, lastName : $scope.lastName, date : $scope.date, txtData : $scope.textdata},
 			//data: $scope.data
 			//firstName: $scope.firstName,
