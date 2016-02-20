@@ -16,8 +16,8 @@ app.controller('appController', function($scope,$http){
 	$scope.date='02/02/2015';
 	$scope.textdata='xx'; */
 	
-	/* $scope.send = function(){
-		console.log("inside click");
+	 $scope.send = function(){
+		/*console.log("inside click");
 		console.log($scope.data.textdata);
 		console.log($scope.firstName + ' ' + $scope.lastName);
 		console.log($scope.date);*/
@@ -36,5 +36,5 @@ app.controller('appController', function($scope,$http){
             $scope.Message = response.data;
 			//console.log($scope.response.data);
         });
-	
+	 }
 });
