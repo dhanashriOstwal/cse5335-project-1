@@ -23,7 +23,7 @@ app.controller('appController', function($scope,$http){
 		console.log($scope.date);*/
 		/* var posting =  */$http({
 			method:"GET",
-			url: "/get "
+			url: "/index.js "
 			//params: {firstname : $scope.firstName, lastName : $scope.lastName, date : $scope.date, txtData : $scope.textdata},
 			//data: $scope.data
 			//firstName: $scope.firstName,
