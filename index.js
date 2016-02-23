@@ -1,10 +1,11 @@
-/* var cool = require('cool-ascii-faces'); */
+ var cool = require('cool-ascii-faces'); 
 var express = require('express');
 var app = express();
+var path = require('path');
 
 app.set('port', (process.env.PORT || 5000));
 
-app.use(express.static(__dirname + '/public'));
+app.use(express.static(path.join(__dirname + '/public')));
 
 // views is directory for all template files
 app.set('views', __dirname + '/views');
@@ -14,7 +15,7 @@ app.use(express.bodyParser());
 
 
 app.get('/', function(request, response) {
-  response.render('pages/index');
+  //response.render('pages/index');
   /* Handling the AngularJS get request*/
     console.log(request.body);
     response.setHeader('Content-Type', 'application/json');
@@ -26,11 +27,11 @@ app.get('/', function(request, response) {
     /*Sending the respone back to the angular Client */
 	//res.sendFile(__dirname + '/Name.html');
 });
-/*
+
 app.get('/cool', function(request, response) {
   response.send(cool()); 
 });
-*/
+
 /*to access the posted data from client using request body
 app.get('/', function (req, res) {
     /* Handling the AngularJS get request
