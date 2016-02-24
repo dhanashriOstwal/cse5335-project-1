@@ -1,4 +1,4 @@
- var cool = require('cool-ascii-faces'); 
+var cool = require('cool-ascii-faces'); 
 var express = require('express');
 var app = express();
 var path = require('path');
@@ -15,21 +15,35 @@ app.use(express.bodyParser());
 
 
 app.get('/', function(request, response) {
-  //response.render('pages/index');
+  response.render('pages/index');
   /* Handling the AngularJS get request*/
     console.log(request.body);
-    response.setHeader('Content-Type', 'application/json');
+    //response.setHeader('Content-Type', 'application/json');
     /*response has to be in the form of a JSON*/
-    request.body.serverMessage = "NodeJS replying to angular"
+    //request.body.serverMessage = {'msg':'NodeJS replying to angular', 'name':'Dhanashri'};
+	//var obj = {"fname":"Dan"};
         /*adding a new field to send it to the angular Client */
-    response.send(JSON.stringify(request.body));
+   //response.send(JSON.stringify(obj));
 	//response.render('pages/index');
     /*Sending the respone back to the angular Client */
 	//res.sendFile(__dirname + '/Name.html');
 });
 
+app.post('/post', function (req, res) {
+    /* Handling the AngularJS post request*/
+    console.log(req.body);
+    res.setHeader('Content-Type', 'application/json');
+    /*response has to be in the form of a JSON*/
+    req.body.serverMessage = "NodeJS replying to angular"
+        /*adding a new field to send it to the angular Client */
+    res.end(JSON.stringify(req.body));
+    /*Sending the respone back to the angular Client */
+});
+
 app.get('/cool', function(request, response) {
-  response.send(cool()); 
+ // response.send(cool()); 
+  var obj = '{"fname":"Dan"}';
+    response.send(JSON.stringify(obj));
 });
 
 /*to access the posted data from client using request body

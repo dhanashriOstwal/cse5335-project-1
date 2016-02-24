@@ -5,8 +5,8 @@
 <body>
 
 <div ng-app="myApp" >
-<form ng-controller="appController" ng-submit="send()"> 
-
+<div ng-controller="appController"> 
+<!-- 
 First Name: <input type="text" placeholder="Enter firstName" ng-model="data.firstName"><br><br>
 Last Name: <input type="text" placeholder="Enter lastName" ng-model="data.lastName"><br><br>
 Date of birth:<input type="date" placeholder="Date" ng-model="data.date"><br><br>
@@ -16,14 +16,15 @@ Full Name: {{data.firstName + " " + data.lastName}}<pre>
 <br><br>
 
 <textarea ng-model="data.textdata"></textarea>
-        <pre>{{data.textdata}}</pre>
-<input type="submit" ng-Click="Submit">
-        <div><pre>{{Message}}<br>
-		</pre>
+        <pre>{{data.textdata}}</pre> -->
+<button   ng-click="send()"> Submit </button>
+        <div>{{Message}}<br>
+		{{evalled.serverMessage}}
         </div>
+		<p>with angular.fromJSON: {{fromJsoned.serverMessage}}</p>
 </div>
 <!-- <ng-form> -->
-
+</div>
 
 </body>
 </html>

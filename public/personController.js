@@ -22,8 +22,8 @@ app.controller('appController', function($scope,$http){
 		console.log($scope.firstName + ' ' + $scope.lastName);
 		console.log($scope.date);*/
 		/* var posting =  */$http({
-			method:"GET",
-			url: "/get "
+			method:"POST",
+			url: "/post"
 			//$http.get("index.js")
 			//params: {firstname : $scope.firstName, lastName : $scope.lastName, date : $scope.date, txtData : $scope.textdata},
 			//data: $scope.data
@@ -33,9 +33,15 @@ app.controller('appController', function($scope,$http){
 			//processData: false 
 		}).then(function mySuccess(response) {
             /*executed when server responds back*/
-            //console.log(response);
-            $scope.Message = response.data;
+			//var pr = angular.fromJson($scope.Names);
+			//angular.forEach(pr,function(value,key){
+			//	$scope.Message = angular.fromJson(response);
+			//});
 			//console.log($scope.response.data);
+			var jsonString = response.data;
+			 $scope.evalled=$scope.$eval(jsonString);
+			  $scope.fromJsoned=angular.fromJson(jsonString);
+			  $scope.Message=response.data;
         });
 	 }
 });
