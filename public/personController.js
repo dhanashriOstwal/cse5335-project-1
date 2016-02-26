@@ -1,47 +1,64 @@
-/* var app = angular.module('myApp', []);
-app.controller('personCtrl', function($scope) {
-    $scope.firstName = "John";
-    $scope.lastName = "Doe";
-    $scope.fullName = function() {
-        return $scope.firstName + " " + $scope.lastName;
-    };
-});
- */
+
 var app = angular.module('myApp', []);
-app.controller('appController', function($scope,$http){
-	//$scope.data={}
-	//$scope.response={}
-	/* $scope.firstName="a ";
-	$scope.lastName=" b";
-	$scope.date='02/02/2015';
-	$scope.textdata='xx'; */
-	
+app.controller('appController', function($scope,$http){	
+	/* $scope.tblShow = false;
+	$scope.mapShow = false; */
 	 $scope.send = function(){
-		/*console.log("inside click");
-		console.log($scope.data.textdata);
-		console.log($scope.firstName + ' ' + $scope.lastName);
-		console.log($scope.date);*/
-		/* var posting =  */$http({
+		 
+		 $http({
 			method:"POST",
 			url: "/post"
-			//$http.get("index.js")
-			//params: {firstname : $scope.firstName, lastName : $scope.lastName, date : $scope.date, txtData : $scope.textdata},
-			//data: $scope.data
-			//firstName: $scope.firstName,
-			//lastName: $scope.lastName,
-			//date: $scope.date,
-			//processData: false 
 		}).then(function mySuccess(response) {
             /*executed when server responds back*/
-			//var pr = angular.fromJson($scope.Names);
-			//angular.forEach(pr,function(value,key){
-			//	$scope.Message = angular.fromJson(response);
-			//});
-			//console.log($scope.response.data);
+			$scope.mapShow = true;	
+			$scope.tblShow = true;
 			var jsonString = response.data;
-			 $scope.evalled=$scope.$eval(jsonString);
-			  $scope.fromJsoned=angular.fromJson(jsonString);
-			  $scope.Message=response.data;
+			$scope.evalled=$scope.$eval(jsonString);
+			$scope.fromJsoned=angular.fromJson(jsonString);
+			$scope.lat1 = $scope.fromJsoned.lat;
+			$scope.long1 = $scope.fromJsoned.longitude;
+			$scope.infoTitle = $scope.fromJsoned.city;
+			$scope.school = $scope.fromJsoned.school;
+			$scope.details = $scope.fromJsoned.schoolOnMap;
+			
+			var mapOptions = {
+				zoom: 10,
+				center: new google.maps.LatLng(32.7050, -97.1228),
+				mapTypeId: google.maps.MapTypeId.ROADMAP
+			};
+
+			$scope.map = new google.maps.Map(document.getElementById('map'), mapOptions);
+
+			$scope.markers = [];
+    
+			var infoWindow = new google.maps.InfoWindow();
+			var latlng = new google.maps.LatLng($scope.lat1, $scope.long1);
+			//var createMarker = function (){
+        
+				var marker = new google.maps.Marker
+				({
+					map: $scope.map,
+					position: latlng,
+					title: $scope.infoTitle,
+					details: $scope.school + $scope.details,
+					animation:google.maps.Animation.BOUNCE
+				});
+				
+				marker.content = '<div class="infoWindowContent">' + marker.title + '</div>';
+        
+				google.maps.event.addListener(marker, 'click', function()
+				{
+					infoWindow.setContent('<h2>' + marker.title + '</h2>' + marker.details);
+					infoWindow.open($scope.map, marker);
+				});
+        
+				$scope.markers.push(marker);
+				$scope.map.setCenter(latlng);
+				$scope.openInfoWindow = function(e, selectedMarker)
+				{
+					e.preventDefault();
+					google.maps.event.trigger(selectedMarker, 'click');
+				}
         });
 	 }
 });

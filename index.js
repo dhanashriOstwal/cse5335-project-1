@@ -34,7 +34,17 @@ app.post('/post', function (req, res) {
     console.log(req.body);
     res.setHeader('Content-Type', 'application/json');
     /*response has to be in the form of a JSON*/
-    req.body.serverMessage = "NodeJS replying to angular"
+	req.body.fname = "Dhanashri";
+	req.body.lname = "Ostwal";
+	req.body.lat = "32.7050";
+	req.body.longitude = "-97.1228";
+	req.body.city = "Arlington";
+	req.body.school = "University of Texas At Arlington";
+	req.body.studentId = "1001277328";
+	req.body.schoolOnMap = "UTA is located here!";
+	req.body.gender = "Female";
+	req.body.semester = "Sem 2";
+	
         /*adding a new field to send it to the angular Client */
     res.end(JSON.stringify(req.body));
     /*Sending the respone back to the angular Client */

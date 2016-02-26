@@ -1,29 +1,60 @@
 <!DOCTYPE html>
 <html>
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script> 
+<script src="https://code.angularjs.org/1.4.8/angular.min.js"</script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.8/angular-route.js"></script>
 <script src="personController.js"></script>
+<script src="https://rawgit.com/angular-ui/angular-google-maps/2.3.2/dist/angular-google-maps.min.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0-beta.2/angular-route.min.js"</script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/lodash.js/3.5.0/lodash.min.js"></script>
+<link rel="stylesheet" href="table.css">
 <body>
 
 <div ng-app="myApp" >
 <div ng-controller="appController"> 
-<!-- 
-First Name: <input type="text" placeholder="Enter firstName" ng-model="data.firstName"><br><br>
-Last Name: <input type="text" placeholder="Enter lastName" ng-model="data.lastName"><br><br>
-Date of birth:<input type="date" placeholder="Date" ng-model="data.date"><br><br>
+<h1>Welcome to Students Details Page</h1><br><br><br>
+<button ng-click="send()"> Submit </button>
+        <br>
+		<br><br>
+		<table ng-show = "tblShow" value="false">
+			<tr>
+				<td>ID</td>
+				<td>First Name</td>
+				<td>Last Name</td>
+				<td>Gender</td>
+				<td>School</td>
+				<td>Semester</td>
+				<td>City</td>
+				<td>Latitude</td>
+				<td>Longitude</td>
+				<td>Comments</td>
+			</tr>
+			<tr>
+				<td>{{fromJsoned.studentId}}</td>
+				<td>{{fromJsoned.fname}}</td>
+				<td>{{fromJsoned.lname}}</td>
+				<td>{{fromJsoned.gender}}</td>
+				<td>{{fromJsoned.school}}</td>
+				<td>{{fromJsoned.semester}}</td>
+				<td>{{fromJsoned.city}}</td>
+				<td>{{fromJsoned.lat}}</td>
+				<td>{{fromJsoned.longitude}}</td>
+				<td>{{fromJsoned.schoolOnMap}}</td>
+			</tr>
+		</table>
+		<br><br>
+		
+<!-- </div> -->
 
-<br><pre>
-Full Name: {{data.firstName + " " + data.lastName}}<pre>
-<br><br>
 
-<textarea ng-model="data.textdata"></textarea>
-        <pre>{{data.textdata}}</pre> -->
-<button   ng-click="send()"> Submit </button>
-        <div>{{Message}}<br>
-		{{evalled.serverMessage}}
-        </div>
-		<p>with angular.fromJSON: {{fromJsoned.serverMessage}}</p>
-</div>
-<!-- <ng-form> -->
+<!-- <div  ng-controller="MapCtrl"> -->
+    <div id="map"></div>
+    <div id="repeat" ng-repeat="marker in markers | orderBy : 'title'">
+         <a id="country_container" href="#" ng-click="openInfoWindow($event, marker)">
+         <!-- <label id="names" >{{marker.title}}</label> --></a>
+    </div>
+</div> 
+
 </div>
 
 </body>
