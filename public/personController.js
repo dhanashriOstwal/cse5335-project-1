@@ -20,7 +20,13 @@ app.controller('appController', function($scope,$http){
 			$scope.infoTitle = $scope.fromJsoned.city;
 			$scope.school = $scope.fromJsoned.school;
 			$scope.details = $scope.fromJsoned.schoolOnMap;
+			$scope.dm = $scope.fromJsoned.dm;
+			$scope.wdm = $scope.fromJsoned.wdm;
+			$scope.cn = $scope.fromJsoned.cn;
+			$scope.db = $scope.fromJsoned.db;
+			$scope.algo = $scope.fromJsoned.algo;
 			
+			//Google map
 			var mapOptions = {
 				zoom: 10,
 				center: new google.maps.LatLng(32.7050, -97.1228),
@@ -58,6 +64,34 @@ app.controller('appController', function($scope,$http){
 				{
 					e.preventDefault();
 					google.maps.event.trigger(selectedMarker, 'click');
+				}
+				
+				
+				//Pie chart
+				var dataMining = parseInt($scope.dm);
+				var webData = parseInt($scope.wdm);
+				var compNetworks = parseInt($scope.cn);
+				var databaseSystems = parseInt($scope.db);
+				var algorithms = parseInt($scope.algo);
+				google.charts.load("current", {'packages':["corechart"]});
+				google.charts.setOnLoadCallback(drawChart);
+				function drawChart() {
+					var data = google.visualization.arrayToDataTable([
+						['Subjects', 'Marks'],
+						['Data Mining', dataMining],
+						['Web Data Management', webData],
+						['Computer Networks', compNetworks],
+						['Database Systems', databaseSystems], 
+						['Algorithms', algorithms]
+					]);
+
+					var options = {
+						title: 'Semester I - Marks',
+						is3D: true,
+					};
+
+					var chart = new google.visualization.PieChart(document.getElementById('piechart_3d'));
+					chart.draw(data, options);
 				}
         });
 	 }

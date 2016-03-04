@@ -39,11 +39,16 @@ app.post('/post', function (req, res) {
 	req.body.lat = "32.7050";
 	req.body.longitude = "-97.1228";
 	req.body.city = "Arlington";
-	req.body.school = "University of Texas At Arlington";
+	req.body.school = "UTA";
 	req.body.studentId = "1001277328";
 	req.body.schoolOnMap = "UTA is located here!";
 	req.body.gender = "Female";
 	req.body.semester = "Sem 2";
+	req.body.dm = "62";
+	req.body.wdm = "98";
+	req.body.cn = "92";
+	req.body.db = "95";
+	req.body.algo = "70";
 	
         /*adding a new field to send it to the angular Client */
     res.end(JSON.stringify(req.body));

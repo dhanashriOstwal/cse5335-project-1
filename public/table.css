@@ -1,5 +1,9 @@
+table {
+    border-collapse: collapse;
+}
+
 table, th , td  {
-  border: 1px solid grey;
+  border: 1px solid black;
   /* border-collapse: collapse; */
   padding: 5px;
 }
@@ -8,12 +12,15 @@ table, th , td  {
     height:420px;
     width:600px;
 }
+
 .infoWindowContent {
     font-size:  14px !important;
     border-top: 1px solid #ccc;
     padding-top: 10px;
 }
+
 h2 {
     margin-bottom:0;
     margin-top: 0;
 }
+
