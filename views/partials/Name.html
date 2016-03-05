@@ -22,7 +22,7 @@
 				<br><br>
 				<table ng-show = "tblShow" value="false">
 					<tr>
-						<td>ID</td>
+						<td>ID</td> 
 						<td>First Name</td>
 						<td>Last Name</td>
 						<td>Gender</td>
@@ -32,19 +32,18 @@
 						<td>Latitude</td>
 						<td>Longitude</td>
 						<td>Comments</td>
-					</tr>
-					<tr>
-						<td>{{fromJsoned.studentId}}</td>
-						<td>{{fromJsoned.fname}}</td>
-						<td>{{fromJsoned.lname}}</td>
-						<td>{{fromJsoned.gender}}</td>
-						<td>{{fromJsoned.school}}</td>
-						<td>{{fromJsoned.semester}}</td>
-						<td>{{fromJsoned.city}}</td>
-						<td>{{fromJsoned.lat}}</td>
-						<td>{{fromJsoned.longitude}}</td>
-						<td>{{fromJsoned.schoolOnMap}}</td>
-					</tr>
+						<td>Marks</td>
+					</tr> 
+					<tr><td ng-repeat="a in stud1 track by $index">{{a}}</td></tr>
+					<tr><td ng-repeat="b in stud2 track by $index">{{b}}</td></tr>
+					<tr><td ng-repeat="c in stud3 track by $index">{{c}}</td></tr>
+					<tr><td ng-repeat="d in stud4 track by $index">{{d}}</td></tr>
+					<tr><td ng-repeat="e in stud5 track by $index">{{e}}</td></tr>
+					<tr><td ng-repeat="f in stud6 track by $index">{{f}}</td></tr>
+					<tr><td ng-repeat="g in stud7 track by $index">{{g}}</td></tr>
+					<tr><td ng-repeat="h in stud8 track by $index">{{h}}</td></tr>
+					<tr><td ng-repeat="i in stud9 track by $index">{{i}}</td></tr>
+					<tr><td ng-repeat="j in stud10 track by $index">{{j}}</td></tr> 
 				</table>
 				<br><br>
 				
@@ -56,7 +55,7 @@
 			
 				<br>
 				<br><br>
-				<table ng-show = "tblShow" value="false">
+				<!-- <table ng-show = "tblShow" value="false">
 					<tr>
 						<td>Data Mining</td>
 						<td>Web Data Management</td>
@@ -71,7 +70,7 @@
 						<td>{{fromJsoned.db}}</td>
 						<td>{{fromJsoned.algo}}</td>
 					</tr>
-				</table>
+				</table> -->
 				<br><br>
 				
 			
