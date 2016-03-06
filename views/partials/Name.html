@@ -49,21 +49,17 @@
 				
 				<div id="map"></div>
 				<div id="repeat" ng-repeat="marker in markers | orderBy : 'title'">
-					 <a id="country_container" href="#" ng-click="openInfoWindow($event, marker)">
-					 <!-- <label id="names" >{{marker.title}}</label> --></a>
+					 <a id="country_container" href="#" ng-click="openInfoWindow($event, marker)"></a>
 				</div>
-			
+				
 				<br>
 				<br><br>
 				<br><br>
 				
-			
-			
 				<div id="piechart_3d" style="width: 900px; height: 500px;"></div>
 			</div>
-</div> 
-
-</div>
+		</div> 
+	</div>
 
 </body>
 </html>
